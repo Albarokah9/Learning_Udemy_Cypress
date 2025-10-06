@@ -51,8 +51,3 @@ describe('My First API Test', function ()  {
         // ✅ Jika semua langkah berhasil, test akan berstatus "passed"
     });
 });
-
-// cy.wait('@bookretrievals').should(({request,response}) => {
-//     cy.get('tr').should('have.length', response.body.length+1);
-    
-// });

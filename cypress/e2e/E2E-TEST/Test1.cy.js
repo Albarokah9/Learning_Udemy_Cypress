@@ -15,6 +15,12 @@ describe('My First Test Suite', function ()  {
     cy.url().then((url) => {
       cy.log(url)
     })
+    // Get Seacrh box adn type ca
+    cy.get('.search-keyword').type('ca');
+    // Wait for 2 seconds
+    cy.wait(2000);
+    // Assert that only 4 product is visible
+    cy.get('.product:visible').should('have.length', 4);
   });
 
 });

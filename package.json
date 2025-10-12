@@ -1,18 +1,21 @@
 {
-  "name": "udemy_cypress",
-  "version": "1.0.0",
-  "description": "learning-cypress-udemy",
-  "license": "ISC",
-  "author": "Albarokah",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "cy:open": "cypress open",
-    "cy-open-chrome": "cypress open --browser chrome",
-    "cy:run": "cypress run",
-    "cy:run-headless": "cypress run --headless"
-  },
-  "devDependencies": {
-    "cypress": "^15.4.0"
-  }
+    "name": "udemy_cypress",
+    "version": "1.0.0",
+    "description": "learning-cypress-udemy",
+    "license": "ISC",
+    "author": "Albarokah",
+    "type": "commonjs",
+    "main": "index.js",
+    "scripts": {
+        "cy:open": "cypress open",
+        "cy-open-chrome": "cypress open --browser chrome",
+        "cy:run": "cypress run",
+        "cy:run-headless": "cypress run --headless",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "devDependencies": {
+        "cypress": "^15.4.0",
+        "prettier": "^3.0.0"
+    }
 }

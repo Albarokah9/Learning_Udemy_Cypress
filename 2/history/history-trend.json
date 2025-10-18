@@ -1,6 +1,6 @@
 [ {
-  "buildOrder" : 1,
-  "reportUrl" : "https://Albarokah9.github.io/Learning_Udemy_Cypress/1",
+  "buildOrder" : 2,
+  "reportUrl" : "https://Albarokah9.github.io/Learning_Udemy_Cypress/2",
   "reportName" : "Allure Report with history",
   "data" : {
     "failed" : 0,

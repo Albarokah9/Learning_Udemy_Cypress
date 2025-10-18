@@ -1,5 +1,5 @@
 [ {
-  "values" : [ "2/merge" ],
+  "values" : [ "main" ],
   "name" : "BRANCH"
 }, {
   "values" : [ "chrome" ],
@@ -8,6 +8,6 @@
   "values" : [ "https://www.saucedemo.com/" ],
   "name" : "BASE_URL"
 }, {
-  "values" : [ "85fb0d37d02c46d723ea44939915137b56204425" ],
+  "values" : [ "047ed2aaaeda3dc9b1b1ea7780eef1500a99ae04" ],
   "name" : "SHA"
 } ]

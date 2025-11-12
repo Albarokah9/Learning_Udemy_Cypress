@@ -1,4 +1,4 @@
-describe('My First Test Suite', function () {
+describe('My Second Test Suite', function () {
     it('My Second Test Case', function () {
         // Test steps will go here
         // Visit a web page
@@ -15,7 +15,7 @@ describe('My First Test Suite', function () {
         cy.url().then((url) => {
             cy.log(url);
         });
-        // Get Seacrh box adn type ca
+        // Get Seacrh box and type ca
         cy.get('.search-keyword').type('ca');
         // Wait for 2 seconds
         cy.wait(2000);

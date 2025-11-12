@@ -9,13 +9,15 @@
     "scripts": {
         "cy:open": "cypress open",
         "cy-open-chrome": "cypress open --browser chrome",
+        "cy-open-firefox": "cypress open --browser firefox",
         "cy:run": "cypress run",
         "cy:run-headless": "cypress run --headless",
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
     "devDependencies": {
-        "cypress": "^15.5.0",
+        "cypress": "^15.6.0",
+        "cypress-iframe": "^1.0.1",
         "prettier": "^3.0.0"
     }
 }

@@ -11,7 +11,7 @@ Dokumentasi materi yang sudah dipelajari dari course Udemy: **Learning Cypress M
 5. Important Player Tips for best learning Experience (3min)
 6. How this Course track on all the new version releases coming from Cypress (1min)
 7. Install Node.js, VS Code & Cypress for Windows and MAC (17min)
-   - Quiz 1: Quiz-Check your knowledge
+    - Quiz 1: Quiz-Check your knowledge
 8. Action plan to complete Javascript learning (1min)
 9. What is Cypress TestRunner (14min)
 10. Important Note on Cypress Versions (4min)
@@ -128,9 +128,12 @@ Dokumentasi materi yang sudah dipelajari dari course Udemy: **Learning Cypress M
 109. Thankyou Note (1min)
 110. Important Note (1min)
 111. Complete 3 hours JavaScript Tutorial for Automation Testing (2hr 55min)
+
+
     - Coding Exercise 1: Calculate basic statistics (total, max, min) using for loop and if else condition logics
     - Coding Exercise 2: Manipulate an array of strings (add, remove, sort)
     - Coding Exercise 3: Apply transformations and calculations to array elements, and filter elements based on a condition
+
 112. How the Interview questions video is designed? (1min)
 113. Questions list with Timestamp (1min)
 114. 75 Mins In detail discussion on commonly asked JavaScript Interview Questions (1hr 23min)

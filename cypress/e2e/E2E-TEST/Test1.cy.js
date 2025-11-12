@@ -25,9 +25,14 @@ describe('My First Test Suite', function () {
         cy.get('.products').as('productLocator');
         cy.get('@productLocator').find('.product').should('have.length', 4);
         // Add the third product to the cart
-        cy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click().then(function () {
-            console.log('Added to cart');
-        });
+        cy.get('@productLocator')
+            .find('.product')
+            .eq(2)
+            .contains('ADD TO CART')
+            .click()
+            .then(function () {
+                console.log('Added to cart');
+            });
         // Iterate through each product and add "Cashews" to the cart
         cy.get('@productLocator')
             .find('.product')

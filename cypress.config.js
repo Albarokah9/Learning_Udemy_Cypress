@@ -6,9 +6,9 @@ module.exports = defineConfig({
         viewportHeight: 768,
         defaultCommandTimeout: 8000,
         pageLoadTimeout: 60000,
-        video: false,
+        video: true,
         chromeWebSecurity: false,
-        watchForFileChanges: false,
+        watchForFileChanges: true,
         setupNodeEvents(on, config) {
             // implement node event listeners here
         },

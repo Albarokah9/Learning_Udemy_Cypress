@@ -4,7 +4,7 @@ module.exports = defineConfig({
     e2e: {
         viewportWidth: 1366,
         viewportHeight: 768,
-        defaultCommandTimeout: 8000,
+        defaultCommandTimeout: 6000,
         pageLoadTimeout: 60000,
         video: true,
         chromeWebSecurity: false,

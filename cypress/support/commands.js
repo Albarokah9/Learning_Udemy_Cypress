@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('submitFormDetails', (country) => {
+    cy.get('#country').should('be.visible').type(country);
+    cy.get('.suggestions ul li a').should('be.visible').click();
+    cy.get('.btn-success').should('be.visible').click();
+});

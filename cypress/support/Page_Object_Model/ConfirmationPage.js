@@ -1,19 +1,22 @@
+// Page Object Model untuk halaman konfirmasi pesanan (Confirmation Page)
 class ConfirmationPage {
+
+    // Klik checkbox syarat & ketentuan sebelum submit order
     klikCheckbox() {
         cy.get('label[for="checkbox2"]')
-            .scrollIntoView()
-            .should('be.visible')
-            .click('topLeft');
+            .scrollIntoView()         // Pastikan checkbox berada dalam viewport
+            .should('be.visible')     // Verifikasi label checkbox tampil di layar
+            .click('topLeft');        // Klik bagian kiri atas untuk mencentang checkbox
     }
+
+    // Mengisi detail country lalu submit form menggunakan custom command
     submitFromDetails(country) {
-        cy.submitFormDetails(country);
-        // cy.get('#country').type('Indonesia');
-        // cy.get('.suggestions ul li a').click();
-        // cy.get('.btn-success').click();
-        // return this;
+        cy.submitFormDetails(country);   // Custom command: ketik negara, pilih suggestion, klik submit
     }
+
+    // Mengambil elemen pesan alert sukses setelah order berhasil
     getAlertMessage() {
-        return cy.get('.alert-success');
+        return cy.get('.alert-success'); // Kembalikan elemen alert untuk assertion di test
     }
 }
 

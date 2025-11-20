@@ -1,7 +1,6 @@
 import ProductPage from '../../support/Page_Object_Model/ProductPage';
 
 class HomePage {
-
     // Membuka halaman utama aplikasi
     goTo() {
         cy.visit(Cypress.env('EndtoEndUrl'));

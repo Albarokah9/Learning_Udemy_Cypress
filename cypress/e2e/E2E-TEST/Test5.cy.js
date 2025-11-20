@@ -1,15 +1,16 @@
 describe('Handling Child Windows', () => {
     it('Should handle child window', () => {
+        // Visit main page
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
-        // Remove target attribute and click
+        // Remove target attribute to force open link in same tab
         cy.get('#opentab').invoke('removeAttr', 'target').click();
-        // Open the URL in the same tab
+        // Switch context to new origin (child window)
         cy.origin('https://www.qaclickacademy.com', () => {
-            // Perform actions in the new origin
+            // Click About link in navigation
             cy.get("#navbarSupportedContent a[href*='about']").click();
-            // Assert mengandung text tertentu, menggunakan 'contain'
+            // Assert heading contains specific text (partial match)
             cy.get('.mt-50 h2').should('contain', 'QAClick Academy');
-            // Assert mengandung text sama persis, menggunakan 'have.text'
+            // Assert heading matches exact text (full match)
             cy.get('.mt-50 h2').should('have.text', 'Welcome to QAClick Academy ');
         });
     });

@@ -1,7 +1,6 @@
 import CartPage from '../../support/Page_Object_Model/CartPage';
 
 class ProductPage {
-
     // Validasi bahwa halaman Shop telah dimuat dengan benar
     pageValidation() {
         cy.contains('Shop Name').should('be.visible');
@@ -18,7 +17,6 @@ class ProductPage {
             .should('be.visible')
             .filter(`:contains("${productName}")`)
             .then(($element) => {
-
                 // Pastikan hanya satu produk yang match dengan nama
                 cy.wrap($element).should('have.length', 1);
 

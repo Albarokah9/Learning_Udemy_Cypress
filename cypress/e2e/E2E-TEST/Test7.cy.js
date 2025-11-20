@@ -1,13 +1,11 @@
 /// <reference types="cypress" />
-
 describe('Handle Mouse Hover', () => {
     it('Test case for mouse hover actions', () => {
+        // Visit practice page
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
-        // Mouse Hover action
-        //cy.get('div.mouse-hover-content').invoke('show');
-        // Click on the 'Top' option
+        // Click on 'Top' option, using force to bypass hover state
         cy.contains('Top').click({ force: true });
-        // Assert that the URL includes 'top'
+        // Assert URL includes 'top' after clicking
         cy.url().should('include', 'top');
     });
 });

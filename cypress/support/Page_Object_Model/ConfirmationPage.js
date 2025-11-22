@@ -7,12 +7,10 @@ class ConfirmationPage {
             .should('be.visible') // Verifikasi label checkbox tampil di layar
             .click('topLeft'); // Klik bagian kiri atas untuk mencentang checkbox
     }
-
     // Mengisi detail country lalu submit form menggunakan custom command
     submitFromDetails(country) {
         cy.submitFormDetails(country); // Custom command: ketik negara, pilih suggestion, klik submit
     }
-
     // Mengambil elemen pesan alert sukses setelah order berhasil
     getAlertMessage() {
         return cy.get('.alert-success'); // Kembalikan elemen alert untuk assertion di test

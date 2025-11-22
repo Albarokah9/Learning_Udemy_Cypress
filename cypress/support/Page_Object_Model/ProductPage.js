@@ -5,12 +5,10 @@ class ProductPage {
     pageValidation() {
         cy.contains('Shop Name').should('be.visible');
     }
-
     // Mendapatkan seluruh card produk yang tampil di halaman
     getCardCount() {
         return cy.get('app-card');
     }
-
     // Memilih produk berdasarkan nama, lalu menekan tombol Add
     selectProduct(productName) {
         cy.get('app-card')
@@ -24,12 +22,10 @@ class ProductPage {
                 cy.wrap($element).contains('button', 'Add').click();
             });
     }
-
     // Menambahkan item pertama dalam list sebagai tambahan
     selectFirstProduct() {
         cy.get('app-card').eq(0).contains('button', 'Add').click();
     }
-
     // Navigasi ke halaman Cart (Checkout summary)
     goToCart() {
         cy.contains('a', 'Checkout').click();

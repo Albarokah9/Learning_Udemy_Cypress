@@ -6,7 +6,6 @@ class CartPage {
         cy.contains('button', 'Checkout').click();
         return new ConfirmationPage();
     }
-
     // Menghitung total harga produk yang ada di tabel cart
     sumOfProducts() {
         let sum = 0;
@@ -16,7 +15,6 @@ class CartPage {
             .each(($el) => {
                 // Parse nilai harga dari UI menjadi number
                 const amount = Number($el.text().split(' ')[1].trim());
-
                 // Akumulasi harga produk
                 sum = sum + amount;
             })

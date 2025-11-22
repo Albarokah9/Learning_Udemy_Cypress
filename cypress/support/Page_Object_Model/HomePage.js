@@ -5,7 +5,6 @@ class HomePage {
     goTo() {
         cy.visit(Cypress.env('EndtoEndUrl'));
     }
-
     // Melakukan login dan setelah berhasil mengembalikan instance ProductPage
     login(username, password) {
         cy.get('#username').should('be.visible').type(username);
@@ -13,7 +12,6 @@ class HomePage {
         cy.contains('Sign In').click();
         return new ProductPage();
     }
-
     // Memvalidasi bahwa user berhasil login dan dialihkan ke halaman "shop"
     VerifyLoginSuccess() {
         cy.url().should('include', 'shop');

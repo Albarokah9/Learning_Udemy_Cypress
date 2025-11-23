@@ -1,3 +1,7 @@
+screenshots/
 node_modules/
 videos/
 cypress.env.json/
+SMOKE-TEST/
+.env
+POM_fe-ramasakti-development/

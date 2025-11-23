@@ -5,3 +5,4 @@ cypress.env.json/
 SMOKE-TEST/
 .env
 POM_fe-ramasakti-development/
+cypress.env.json

@@ -10,7 +10,9 @@ describe('My Four Test Suite', () => {
         // Handle and assert alert popup message
         cy.on('window:alert', (str) => {
             // Validate alert text using Mocha assertion
-            expect(str).to.equal('Hello , share this practice page and share your knowledge');
+            expect(str).to.equal(
+                'Hello , share this practice page and share your knowledge'
+            );
         });
         // Handle and assert confirm popup message
         cy.on('window:confirm', (str) => {

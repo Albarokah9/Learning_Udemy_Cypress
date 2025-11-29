@@ -7,18 +7,29 @@
     "type": "commonjs",
     "main": "index.js",
     "scripts": {
-        "cy:open": "cypress open",
-        "cy-open-chrome": "cypress open --browser chrome",
-        "cy-open-firefox": "cypress open --browser firefox",
-        "cy:run": "cypress run",
-        "cy:run-headless": "cypress run --headless",
+        "cy-run": "npx cypress run",
+        "cy-open": "npx cypress open",
+        "cy-open-chrome": "npx cypress open --browser chrome",
+        "cy-open-firefox": "npx cypress open --browser firefox",
+        "cy-open-edge": "npx cypress open --browser edge",
+        "cy-run-headed-chrome": "npx cypress run --headed --browser chrome",
+        "cy-run-headed-firefox": "npx cypress run --headed --browser firefox",
+        "cy-run-headed-edge": "npx cypress run --headed --browser edge",
+        "cy-run-headless": "cypress run --headless",
+        "cy-run-headless-chrome": "cypress run --headless --browser chrome",
+        "cy-run-headless-firefox": "cypress run --headless --browser firefox",
+        "cy-run-headless-edge": "cypress run --headless --browser edge",
+        "recordDashboardTest": "dotenv -e .env npx cypress run --record",
         "format": "prettier --write .",
-        "format:check": "prettier --check ."
+        "format-check": "prettier --check .",
+        "TestExampleEcommers": "npx cypress run --spec \"cypress/e2e/TestExampleEcommers/*\""
     },
     "devDependencies": {
         "cypress": "^15.7.0",
         "cypress-iframe": "^1.0.1",
+        "cypress-mochawesome-reporter": "^4.0.2",
         "dotenv": "^17.2.3",
+        "dotenv-cli": "^11.0.0",
         "prettier": "^3.0.0"
     }
 }

@@ -2,27 +2,24 @@ const { defineConfig } = require('cypress');
 require('dotenv').config();
 
 module.exports = defineConfig({
+    reporter: 'cypress-mochawesome-reporter',
+    projectId: 'urf3ee',
     e2e: {
-        baseUrl: process.env.CYPRESS_BASE_URL,
-        env: {
-            username: process.env.CYPRESS_USERNAME,
-            password: process.env.CYPRESS_PASSWORD,
-        },
+        retries: { runMode: 1 },
         viewportWidth: 1366,
         viewportHeight: 768,
         defaultCommandTimeout: 6000,
         pageLoadTimeout: 60000,
-        video: true,
         chromeWebSecurity: false,
         watchForFileChanges: true,
         setupNodeEvents(on, config) {
-            // implement node event listeners here
+            require('cypress-mochawesome-reporter/plugin')(on);
+            return config;
         },
         specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
         screenshotOnRunFailure: true,
         screenshotsFolder: 'cypress/screenshots',
         videosFolder: 'cypress/videos',
         video: true,
-        experimentalStudio: false,
     },
 });

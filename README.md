@@ -2,6 +2,125 @@
 
 Dokumentasi materi yang sudah dipelajari dari course Udemy: **Learning Cypress Modern Automation Testing from Scratch + Frameworks**
 
+## 🚀 Setup & Installation
+
+### Prerequisites
+- Node.js (versi 14 atau lebih baru)
+- Git
+
+### Langkah-langkah Setup
+
+1. **Clone repository ini**
+   ```bash
+   git clone <URL_GITHUB_ANDA>
+   cd Udemy_Cypress
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Setup environment variables** (opsional)
+   - Buat file `.env` di root project jika diperlukan
+   - Atau gunakan `cypress.env.json` untuk konfigurasi Cypress
+
+4. **Verifikasi instalasi**
+   ```bash
+   npx cypress verify
+   ```
+
+## 📝 Cara Menjalankan Test
+
+### Menjalankan Test dengan UI (Test Runner)
+
+```bash
+# Buka Cypress Test Runner (default browser)
+npm run cy-open
+
+# Buka dengan browser spesifik
+npm run cy-open-chrome
+npm run cy-open-firefox
+npm run cy-open-edge
+```
+
+### Menjalankan Test Headless (CLI)
+
+```bash
+# Run semua test (headless mode)
+npm run cy-run
+
+# Run dengan browser spesifik (headless)
+npm run cy-run-headless-chrome
+npm run cy-run-headless-firefox
+npm run cy-run-headless-edge
+```
+
+### Menjalankan Test Headed (dengan UI browser)
+
+```bash
+# Run dengan browser visible
+npm run cy-run-headed-chrome
+npm run cy-run-headed-firefox
+npm run cy-run-headed-edge
+```
+
+### Menjalankan Test Spesifik
+
+```bash
+# Run test di folder TestExampleEcommers
+npm run TestExampleEcommers
+
+# Run test spesifik dengan spec path
+npx cypress run --spec "cypress/e2e/E2E-TEST/Test1.cy.js"
+```
+
+### Recording Test ke Cypress Dashboard
+
+```bash
+# Record test results ke Cypress Dashboard
+npm run recordDashboardTest
+```
+
+### Code Formatting
+
+```bash
+# Format semua file dengan Prettier
+npm run format
+
+# Check format tanpa mengubah file
+npm run format-check
+```
+
+## 📁 Struktur Project
+
+```
+Udemy_Cypress/
+├── cypress/
+│   ├── e2e/                    # Test files
+│   │   ├── API-TEST/          # API testing
+│   │   ├── E2E-TEST/          # End-to-end tests
+│   │   ├── SMOKE-TEST/        # Smoke tests
+│   │   ├── TestExampleEcommers/ # Ecommerce example tests
+│   │   └── CypressLearning/   # Learning examples
+│   ├── fixtures/              # Test data
+│   ├── support/               # Custom commands & utilities
+│   │   └── Page_Object_Model/ # POM classes
+│   └── reports/               # Test reports
+├── cypress.config.js          # Cypress configuration
+├── package.json               # Dependencies & scripts
+└── README.md                  # Dokumentasi ini
+```
+
+## 📊 Reports
+
+Setelah menjalankan test, HTML report akan tersedia di:
+```
+cypress/reports/html/index.html
+```
+
+---
+
 ## Daftar Materi
 
 1. What is Cypress? And why it is future of Automation (11min)

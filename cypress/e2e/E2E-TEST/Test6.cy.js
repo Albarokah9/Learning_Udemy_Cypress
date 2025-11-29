@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-// 
+//
 describe('Table Validation Test', () => {
     it('Test case for validating table data', () => {
         // Visit the practice page

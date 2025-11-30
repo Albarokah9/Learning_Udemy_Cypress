@@ -9,9 +9,9 @@
     "scripts": {
         "cy-run": "npx cypress run",
         "cy-open": "npx cypress open",
-        "cy-open-chrome": "npx cypress open --browser chrome",
-        "cy-open-firefox": "npx cypress open --browser firefox",
-        "cy-open-edge": "npx cypress open --browser edge",
+        "cy-run-chrome": "npx cypress run --browser chrome",
+        "cy-run-firefox": "npx cypress run --browser firefox",
+        "cy-run-edge": "npx cypress run --browser edge",
         "cy-run-headed-chrome": "npx cypress run --headed --browser chrome",
         "cy-run-headed-firefox": "npx cypress run --headed --browser firefox",
         "cy-run-headed-edge": "npx cypress run --headed --browser edge",
@@ -20,9 +20,13 @@
         "cy-run-headless-firefox": "cypress run --headless --browser firefox",
         "cy-run-headless-edge": "cypress run --headless --browser edge",
         "recordDashboardTest": "dotenv -e .env npx cypress run --record",
+        "cy-open-chrome": "npx cypress open --browser chrome",
+        "cy-open-firefox": "npx cypress open --browser firefox",
+        "cy-open-edge": "npx cypress open --browser edge",
+        "TestExampleEcommers": "npx cypress run --spec \"cypress/e2e/TestExampleEcommers/*\"",
+        "SmokeTest": "npx cypress run --spec \"cypress/e2e/TestExampleEcommers/Test1.cy.js/*\"",
         "format": "prettier --write .",
-        "format-check": "prettier --check .",
-        "TestExampleEcommers": "npx cypress run --spec \"cypress/e2e/TestExampleEcommers/*\""
+        "format-check": "prettier --check ."
     },
     "devDependencies": {
         "cypress": "^15.7.0",

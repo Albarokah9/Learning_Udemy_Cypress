@@ -1,6 +1,8 @@
 const { Given, When, Then } = require('@badeball/cypress-cucumber-preprocessor');
 
-// Step Definitions untuk Example Feature
+/**
+ * Step Definitions untuk Example Feature
+ */
 
 Given('Saya membuka halaman Google', () => {
     cy.visit('https://www.google.com');

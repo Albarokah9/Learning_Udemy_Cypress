@@ -25,15 +25,31 @@
         "cy-open-edge": "npx cypress open --browser edge",
         "TestExampleEcommers": "npx cypress run --spec \"cypress/e2e/TestExampleEcommers/*\"",
         "SmokeTest": "npx cypress run --spec \"cypress/e2e/TestExampleEcommers/Test1.cy.js/*\"",
+        "cy-run-cucumber": "npx cypress run --spec \"cypress/e2e/features/**/*.feature\"",
+        "cy-open-cucumber-open": "npx cypress open --e2e --browser chrome",
+        "cy-run-cucumber-chrome": "npx cypress run --spec \"cypress/e2e/features/**/*.feature\" --browser chrome",
+        "cy-run-cucumber-headed": "npx cypress run --spec \"cypress/e2e/features/**/*.feature\" --headed --browser chrome",
         "format": "prettier --write .",
         "format-check": "prettier --check ."
     },
+    "cypress-cucumber-preprocessor": {
+        "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,ts}",
+        "filterSpecs": true,
+        "omitFiltered": true
+    },
     "devDependencies": {
+        "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
+        "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+        "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
         "cypress": "^15.7.0",
         "cypress-iframe": "^1.0.1",
         "cypress-mochawesome-reporter": "^4.0.2",
         "dotenv": "^17.2.3",
         "dotenv-cli": "^11.0.0",
+        "multiple-cucumber-html-reporter": "^3.9.3",
         "prettier": "^3.0.0"
+    },
+    "dependencies": {
+        "@badeball/cypress-cucumber-preprocessor": "^23.2.1"
     }
 }

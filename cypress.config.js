@@ -1,4 +1,7 @@
 const { defineConfig } = require('cypress');
+const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
+const addCucumberPreprocessorPlugin = require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin;
+const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild').createEsbuildPlugin;
 require('dotenv').config();
 
 module.exports = defineConfig({
@@ -12,11 +15,23 @@ module.exports = defineConfig({
         pageLoadTimeout: 60000,
         chromeWebSecurity: false,
         watchForFileChanges: true,
-        setupNodeEvents(on, config) {
+        async setupNodeEvents(on, config) {
+            // Mochawesome reporter
             require('cypress-mochawesome-reporter/plugin')(on);
+
+            // Cucumber preprocessor
+            await addCucumberPreprocessorPlugin(on, config);
+
+            on(
+                'file:preprocessor',
+                createBundler({
+                    plugins: [createEsbuildPlugin(config)],
+                })
+            );
+
             return config;
         },
-        specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+        specPattern: 'cypress/e2e/**/*.{cy.{js,jsx,ts,tsx},feature}',
         screenshotOnRunFailure: true,
         screenshotsFolder: 'cypress/screenshots',
         videosFolder: 'cypress/videos',

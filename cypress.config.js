@@ -9,6 +9,10 @@ module.exports = defineConfig({
     projectId: 'urf3ee',
     e2e: {
         retries: { runMode: 1, openMode: 1 },
+        env: {
+            practiceUrl: "https://rahulshettyacademy.com/AutomationPractice/",
+            Url: "https://rahulshettyacademy.com/loginpagePractise/#"
+        },
         viewportWidth: 1366,
         viewportHeight: 768,
         defaultCommandTimeout: 6000,

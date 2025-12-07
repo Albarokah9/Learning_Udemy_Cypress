@@ -1,10 +1,19 @@
-screenshots/
 node_modules/
-videos/
-cypress.env.json/
-SMOKE-TEST
 .env
 cypress.env.json
+
+# Cypress Artifacts
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+
+# Specific ignores used previously
+SMOKE-TEST
 CypressLearning/
-reports/
-screenshots/
+
+# Report Generator Tool (Binary file)
+cucumber-json-formatter.exe
+
+# OS generated files
+.DS_Store
+Thumbs.db

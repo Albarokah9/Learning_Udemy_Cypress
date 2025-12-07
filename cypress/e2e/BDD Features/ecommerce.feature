@@ -6,8 +6,11 @@ Fitur: Validasi Pembelian Produk E-commerce
 
   Dasar:
     Ketika Saya membuka aplikasi e-commerce
-    Dan Saya login dengan username "rahulshettyacademy" dan password "learning"
+    Dan Saya login dengan kredensial berikut:
+      | username           | password |
+      | rahulshettyacademy | learning |
 
+  @Regression
   Skenario: Berhasil membeli produk dengan total harga sesuai budget
     Maka Saya melihat halaman katalog produk dengan 4 produk tersedia
     Ketika Saya menambahkan produk "Nokia Edge" ke keranjang

@@ -75,6 +75,22 @@ npm run TestExampleEcommers
 npx cypress run --spec "cypress/e2e/E2E-TEST/Test1.cy.js"
 ```
 
+### Menjalankan Test BDD (Cucumber)
+
+```bash
+# Run semua BDD feature files (headless)
+npm run cy-run-cucumber
+
+# Buka Cypress Runner untuk BDD (Chrome)
+npm run cy-open-cucumber-open
+
+# Run BDD tests dengan Chrome (headless)
+npm run cy-run-cucumber-chrome
+
+# Run BDD tests dengan Chrome (headed via CLI)
+npm run cy-run-cucumber-headed
+```
+
 ### Recording Test ke Cypress Dashboard
 
 ```bash

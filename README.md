@@ -180,12 +180,52 @@ Tambahkan perintah ini di `package.json` -> `scripts`:
 
 ---
 
-### Recording Test ke Cypress Dashboard
+## ☁️ Cypress Cloud Dashboard
+
+Project ini terintegrasi dengan Cypress Cloud untuk monitoring hasil test, video replay, dan debugging history.
+
+- **Project ID**: `urf3ee`
+- **Dashboard URL**: [Akses Dashboard Project](https://cloud.cypress.io/projects/urf3ee/runs)
+
+### 🛠️ Panduan Setup Cypress Cloud (Dari Awal)
+
+Jika Anda ingin menghubungkan project ini ke Dashboard Cypress Anda sendiri (atau baru belajar setup):
+
+1. **Buat Project di Cypress Cloud**:
+   - Login ke [Cypress Cloud](https://cloud.cypress.io/).
+   - Klik **"Create New Project"**.
+
+2. **Dapatkan Project ID**:
+   - Copy `projectId` yang diberikan dashboard.
+   - Paste ke dalam file `cypress.config.js`:
+     ```javascript
+     module.exports = defineConfig({
+       projectId: "ID_PROJECT_ANDA",
+       // ... config lain
+     });
+     ```
+
+3. **Dapatkan Record Key**:
+   - Copy Key Private yang muncul (misal: `8d204...`).
+   - **PENTING**: Jangan commit key ini ke GitHub!
+
+4. **Setup Environment Variable**:
+   - **Local**: Masukkan ke file `.env`:
+     ```env
+     CYPRESS_RECORD_KEY=your-secret-key-here
+     ```
+   - **CI/CD (GitHub)**: Masukkan ke **Settings > Secrets and variables > Actions > New Repository Secret**.
+
+### Cara Record Test ke Dashboard
+
+Pastikan `CYPRESS_RECORD_KEY` sudah ter-setup di `.env` lokal atau GitHub Secrets.
 
 ```bash
-# Record test results ke Cypress Dashboard
+# Record test run (Upload hasil ke Cloud)
 npm run recordDashboardTest
 ```
+
+> **Catatan:** Di lingkungan CI/CD (GitHub Actions), recording dilakukan otomatis setiap kali ada Push ke repository.
 
 ### Code Formatting
 

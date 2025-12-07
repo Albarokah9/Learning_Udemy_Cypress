@@ -2,7 +2,7 @@ screenshots/
 node_modules/
 videos/
 cypress.env.json/
-SMOKE-TEST/
+SMOKE-TEST
 .env
 cypress.env.json
 CypressLearning/

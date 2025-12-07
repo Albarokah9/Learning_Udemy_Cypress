@@ -23,7 +23,7 @@ Dokumentasi materi yang sudah dipelajari dari course Udemy: **Learning Cypress M
 
 3. **Setup environment variables** (opsional)
    - Buat file `.env` di root project jika diperlukan
-   - Atau gunakan `cypress.env.json` untuk konfigurasi Cypress
+   - Buat file `.env` di root project jika diperlukan (contoh untuk CYPRESS_RECORD_KEY)
 
 4. **Verifikasi instalasi**
    ```bash
@@ -103,36 +103,6 @@ npm run recordDashboardTest
 ```bash
 # Format semua file dengan Prettier
 npm run format
-
-# Check format tanpa mengubah file
-npm run format-check
-```
-
-## 📁 Struktur Project
-
-```
-Udemy_Cypress/
-├── cypress/
-│   ├── e2e/                    # Test files
-│   │   ├── API-TEST/          # API testing
-│   │   ├── E2E-TEST/          # End-to-end tests
-│   │   ├── SMOKE-TEST/        # Smoke tests
-│   │   ├── TestExampleEcommers/ # Ecommerce example tests
-│   │   └── CypressLearning/   # Learning examples
-│   ├── fixtures/              # Test data
-│   ├── support/               # Custom commands & utilities
-│   │   └── Page_Object_Model/ # POM classes
-│   └── reports/               # Test reports
-├── cypress.config.js          # Cypress configuration
-├── package.json               # Dependencies & scripts
-└── README.md                  # Dokumentasi ini
-```
-
-## 📊 Reports
-
-Setelah menjalankan test, HTML report akan tersedia di:
-```
-cypress/reports/html/index.html
 ```
 
 ---

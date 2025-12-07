@@ -105,6 +105,33 @@ npm run recordDashboardTest
 npm run format
 ```
 
+```
+
+## 📁 Struktur Project
+
+```
+Udemy_Cypress/
+├── .github/
+│   └── workflows/             # CI/CD configuration (GitHub Actions)
+├── cypress/
+│   ├── e2e/
+│   │   ├── API-TEST/          # API Automation Tests
+│   │   ├── BDD Features/      # Cucumber Feature files (.feature)
+│   │   ├── step_definitions/  # Cucumber Step Definitions (.js)
+│   │   ├── E2E-TEST/          # End-to-end spec files
+│   │   ├── SMOKE-TEST/        # Smoke tests
+│   │   ├── TestExampleEcommers/ # Sample Ecommerce tests
+│   ├── fixtures/              # Test data files (JSON)
+│   ├── support/
+│   │   ├── Page_Object_Model/ # Page Object Model classes
+│   │   ├── commands.js        # Custom Cypress commands
+│   │   └── e2e.js             # Global configuration & hooks
+│   └── reports/               # HTML/JSON Test Reports
+├── cypress.config.js          # Main Cypress configuration
+├── package.json               # Dependencies & scripts
+└── README.md                  # Dokumentasi Project
+```
+
 ---
 
 ## Daftar Materi

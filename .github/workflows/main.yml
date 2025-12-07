@@ -12,8 +12,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
-          # Uses the custom start command from your package.json if needed,
-          # or simply runs the default cypress run.
-          # If you want to run cucumber tests, uncomment the line below:
-          # command: npm run cy-run-cucumber
-          build: npm run cy-run
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

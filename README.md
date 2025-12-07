@@ -112,7 +112,8 @@ npm run format
 ```
 Udemy_Cypress/
 ├── .github/
-│   └── workflows/             # CI/CD configuration (GitHub Actions)
+│   └── workflows/
+│       └── main.yml           # CI/CD configuration (GitHub Actions)
 ├── cypress/
 │   ├── e2e/
 │   │   ├── API-TEST/          # API Automation Tests
@@ -120,13 +121,13 @@ Udemy_Cypress/
 │   │   ├── step_definitions/  # Cucumber Step Definitions (.js)
 │   │   ├── E2E-TEST/          # End-to-end spec files
 │   │   ├── SMOKE-TEST/        # Smoke tests
-│   │   ├── TestExampleEcommers/ # Sample Ecommerce tests
+│   │   └── TestExampleEcommers/
 │   ├── fixtures/              # Test data files (JSON)
 │   ├── support/
-│   │   ├── Page_Object_Model/ # Page Object Model classes
-│   │   ├── commands.js        # Custom Cypress commands
-│   │   └── e2e.js             # Global configuration & hooks
-│   └── reports/               # HTML/JSON Test Reports
+│   │   ├── Page_Object_Model/ # POM classes
+│   │   ├── commands.js        # Custom commands
+│   │   └── e2e.js             # Global setup
+│   └── reports/               # HTML/JSON Reports
 ├── cypress.config.js          # Main Cypress configuration
 ├── package.json               # Dependencies & scripts
 └── README.md                  # Dokumentasi Project

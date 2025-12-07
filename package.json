@@ -30,13 +30,20 @@
         "cy-run-cucumber-chrome": "npx cypress run --spec \"cypress/e2e/BDD Features/**/*.feature\" --browser chrome",
         "cy-run-cucumber-headed": "npx cypress run --spec \"cypress/e2e/BDD Features/**/*.feature\" --headed --browser chrome",
         "cy-run-cucumber-headless": "npx cypress run --spec \"cypress/e2e/BDD Features/**/*.feature\" --headless --browser chrome",
+        "cy-run-cucumber-regression": "npx cypress run --spec \"cypress/e2e/BDD Features/**/*.feature\" --env TAGS=\"@Regression\"",
+        "cy-run-cucumber-smoke": "npx cypress run --spec \"cypress/e2e/BDD Features/**/*.feature\" --env TAGS=\"@Smoke\"",
         "format": "prettier --write .",
-        "format-check": "prettier --check ."
+        "format-check": "prettier --check .",
+        "generate-html-report": "node generate-report.js"
     },
     "cypress-cucumber-preprocessor": {
         "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,ts}",
         "filterSpecs": true,
-        "omitFiltered": true
+        "omitFiltered": true,
+        "json": {
+            "enabled": true,
+            "output": "cypress/reports/cucumber-json/cucumber-report.json"
+        }
     },
     "devDependencies": {
         "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",

@@ -90,6 +90,96 @@ npm run cy-run-cucumber-chrome
 npm run cy-run-cucumber-headed
 ```
 
+### Filtering Test BDD dengan Tags
+
+Anda bisa menggunakan Tags (seperti `@Smoke`, `@Regression`) di dalam file `.feature` untuk menjalankan scenario tertentu.
+
+```bash
+# Run test dengan tag @Regression (menggunakan script npm)
+npm run cy-run-cucumber-regression
+
+# Run test dengan tag @Smoke (menggunakan script npm)
+npm run cy-run-cucumber-smoke
+
+# Run manual dengan npx (langsung di terminal)
+npx cypress run --spec "cypress/e2e/BDD Features/**/*.feature" --env TAGS="@Regression"
+```
+
+### 📊 Setup Cucumber HTML Report
+
+Agar laporan HTML Cucumber yang cantik bisa digenerate, ada **satu langkah manual** yang wajib dilakukan:
+
+1. **Download Formatter**:
+   - Buka: [Cucumber JSON Formatter Releases](https://github.com/cucumber/json-formatter/releases/tag/v19.0.0)
+   - Download file untuk Windows: `cucumber-json-formatter-windows-amd64`
+2. **Setup File**:
+   - Rename file yang didownload menjadi `cucumber-json-formatter.exe`
+   - Pindahkan file `.exe` tersebut ke **root folder project** ini (`Udemy_Cypress/`).
+
+**Cara Generate Report:**
+
+```bash
+# 1. Jalankan Test BDD (ini akan membuat file JSON mentah)
+npm run cy-run-cucumber
+
+# 2. Generate HTML Report (ini akan membuka report di browser otomatis)
+npm run generate-html-report
+```
+
+---
+
+## 📖 Panduan Lengkap Setup Cucumber Report dari Nol
+
+Berikut adalah langkah-langkah teknis yang dilakukan untuk menghasilkan setup report di atas (sebagai referensi jika ingin setup di project baru):
+
+### 1. Install Library
+Install library `multiple-cucumber-html-reporter` untuk mengubah output JSON menjadi HTML.
+```bash
+npm install multiple-cucumber-html-reporter --save-dev
+```
+
+### 2. Config JSON Output
+Aktifkan output JSON pada plugin cucumber di `package.json`:
+```json
+"cypress-cucumber-preprocessor": {
+    "json": {
+        "enabled": true,
+        "output": "cypress/reports/cucumber-json/cucumber-report.json"
+    }
+}
+```
+
+### 3. Setup JSON Formatter (Wajib)
+Cucumber versi baru membutuhkan `cucumber-json-formatter` untuk format output yang benar.
+1. Download file executable dari [GitHub Releases](https://github.com/cucumber/json-formatter/releases).
+2. Rename menjadi `cucumber-json-formatter.exe`.
+3. Simpan di root folder project (sejajar dengan `package.json`).
+
+### 4. Buat Script Generator
+Buat file `generate-report.js` di root folder:
+```javascript
+const report = require('multiple-cucumber-html-reporter');
+
+report.generate({
+    jsonDir: './cypress/reports/cucumber-json/',
+    reportPath: './cypress/reports/html-multi-cucumber-report/',
+    openReportInBrowser: true, // Otomatis buka browser
+    metadata: {
+        browser: { name: 'chrome', version: 'latest' },
+        device: 'Local Test Machine',
+        platform: { name: 'windows', version: '11' }
+    }
+});
+```
+
+### 5. Tambahkan NPM Script
+Tambahkan perintah ini di `package.json` -> `scripts`:
+```json
+"generate-html-report": "node generate-report.js"
+```
+
+---
+
 ### Recording Test ke Cypress Dashboard
 
 ```bash

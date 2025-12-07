@@ -36,6 +36,27 @@ Given('Saya login dengan username {string} dan password {string}', (username, pa
     productPage = homePage.login(username, password);
 });
 
+/**
+ * Login dengan Data Table
+ * Digunakan ketika ingin mengirimkan multiple data atau structurized data di Gherkin
+ * 
+ * @example
+ * Dan Saya login dengan kredensial berikut:
+ *   | username           | password |
+ *   | rahulshettyacademy | learning |
+ * 
+ * @param {DataTable} dataTable - Object tabel dari Cucumber
+ */
+Given('Saya login dengan kredensial berikut:', (dataTable) => {
+    // Mengubah table menjadi Array of Objects
+    // Contoh: [{ username: 'rahulshettyacademy', password: 'learning' }]
+    const data = dataTable.hashes();
+
+    data.forEach((row) => {
+        productPage = homePage.login(row.username, row.password);
+    });
+});
+
 When('Saya menambahkan produk {string} ke keranjang', (productName) => {
     productPage.addProductByName(productName);
 });

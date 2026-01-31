@@ -34,7 +34,10 @@
         "cy-run-cucumber-smoke": "npx cypress run --spec \"cypress/e2e/BDD Features/**/*.feature\" --env TAGS=\"@Smoke\"",
         "format": "prettier --write .",
         "format-check": "prettier --check .",
-        "generate-html-report": "node generate-report.js"
+        "generate-html-report": "node generate-report.js",
+        "clean:reports": "rm -rf cypress/reports/*",
+        "pretest:cucumber": "npm run clean:reports",
+        "test:cucumber": "npm run cy-run-cucumber && npm run generate-html-report"
     },
     "cypress-cucumber-preprocessor": {
         "stepDefinitions": "cypress/e2e/step_definitions/**/*.{js,ts}",
@@ -49,7 +52,7 @@
         "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
         "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
         "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-        "cypress": "^15.7.1",
+        "cypress": "^15.8.1",
         "cypress-iframe": "^1.0.1",
         "cypress-mochawesome-reporter": "^4.0.2",
         "dotenv": "^17.2.3",

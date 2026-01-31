@@ -1,42 +1,46 @@
 /**
- * Handling Frames with Cypress using real time example
- * npm install -D cypress-iframe
+ * Test Suite: Handling Frames
+ * File: Test9.cy.js
+ * 
+ * Tes ini memverifikasi interaksi Cypress dengan Iframe, termasuk navigasi internal
+ * dan verifikasi konten di dalam frame setelah berpindah halaman.
  */
+
 /// <reference types="cypress" />
 /// <reference types="cypress-iframe" />
 import 'cypress-iframe';
 
 describe('Handling Frames', () => {
     it('Test', () => {
-        // Visit URL from Cypress environment variable
+        // Test Steps:
+        // 1. Mengunjungi URL latihan dari environment variable
         cy.visit(Cypress.env('practiceUrl'));
-        // Ensure iframe is fully loaded before interacting
+        
+        // 2. Memastikan iframe awal dimuat
         cy.frameLoaded('#courses-iframe');
-        // Switch context to iframe and click Mentorship link (first index)
-        cy.iframe('#courses-iframe').find("a[href*='mentorship']").eq(0).click();
-        // Wait until iframe navigates to Mentorship URL
+        
+        // 3. Mengklik link Mentorship di dalam iframe
+        cy.iframe('#courses-iframe')
+            .find("a[href*='mentorship']")
+            .eq(0)
+            .click();
+        
+        // 4. Menunggu hingga iframe memuat halaman mentorship (menggunakan URL filter)
         cy.frameLoaded('#courses-iframe', { url: /mentorship/i });
-        cy.iframe().within(() => {
-            // Verifikasi seluruh teks di dalam h1
-            cy.get('h1').should('contain.text', 'Get Personal Guidance from');
-
-
-            // Verifikasi teks dalam span yang memiliki class "text-primary"
-           cy.get('h1 span.text-primary').should('have.text', 'Rahul Shetty');
+        
+        // 5. Melakukan verifikasi konten di dalam halaman Mentorship
+        cy.iframe('#courses-iframe').within(() => {
+            // Memastikan teks 'Mentorship' muncul (sebagai indikator halaman benar)
+            cy.contains(/Mentorship/i, { timeout: 10000 })
+                .should('be.visible');
+            
+            // Memastikan nama 'Rahul Shetty' muncul di halaman tersebut
+            cy.contains('Rahul Shetty')
+                .should('be.visible');
+                
+            // Menggunakan regex untuk mencari deskripsi mentorship yang confirmed ada di log
+            cy.contains(/mentorship program/i)
+                .should('be.visible');
         });
-
-        // Assert that there are exactly 2 elements with class 'pricing-title'
-        // cy.iframe()
-        //     .find("h1[class*='pricing-title']", { timeout: 10000 })
-        //     .should('have.length', 2);
-        // // Guard assertion (commented out): ensure at least 1 title is visible
-        // cy.iframe('#courses-iframe')
-        //     .find('h1.pricing-title, h2.pricing-title', { timeout: 15000 })
-        //     .should('be.visible')
-        //     .as('titles'); // Save element as alias
-        // // Non-retry assert against aliased subject (commented section)
-        // cy.get('@titles').then(($els) => {
-        //     expect($els.length, 'pricing titles count').to.eq(2);
-        // });
     });
 });

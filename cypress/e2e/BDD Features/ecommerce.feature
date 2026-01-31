@@ -8,7 +8,7 @@ Fitur: Validasi Pembelian Produk E-commerce
     Ketika Saya membuka aplikasi e-commerce
     Dan Saya login dengan kredensial berikut:
       | username           | password |
-      | rahulshettyacademy | learning |
+      | rahulshettyacademy | Learning@830$3mK2 |
 
   @Regression
   Skenario: Berhasil membeli produk dengan total harga sesuai budget

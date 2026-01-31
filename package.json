@@ -52,7 +52,7 @@
         "@bahmutov/cypress-esbuild-preprocessor": "^2.2.7",
         "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
         "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-        "cypress": "^15.8.1",
+        "cypress": "^15.9.0",
         "cypress-iframe": "^1.0.1",
         "cypress-mochawesome-reporter": "^4.0.2",
         "dotenv": "^17.2.3",
@@ -62,5 +62,9 @@
     },
     "dependencies": {
         "@badeball/cypress-cucumber-preprocessor": "^23.2.1"
+    },
+    "overrides": {
+        "undici": "^6.23.0",
+        "diff": "^5.2.0"
     }
 }

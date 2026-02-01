@@ -1,5 +1,13 @@
+/**
+ * Test Suite: Automation Practice - UI Elements
+ * File: Test3.cy.js
+ *
+ * Pengujian untuk berbagai elemen UI seperti checkbox, dropdown (statis & dinamis),
+ * visibility, dan radio button pada halaman Automation Practice.
+ */
 describe('My Three Test Suite', function () {
     it('My Three Test Case', function () {
+        // Test Steps:
         // Visit a web page
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
         /**

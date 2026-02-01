@@ -1,5 +1,12 @@
+/**
+ * Test Suite: GreenKart E2E Tests
+ * File: Test1.cy.js
+ *
+ * Pengujian dasar untuk fitur pencarian, filter, dan penambahan produk ke keranjang.
+ */
 describe('My First Test Suite', function () {
     it('My First Test Case', function () {
+        // Test Steps:
         // Visit a web page
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/');
         // Check the title of the page

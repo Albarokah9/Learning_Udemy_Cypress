@@ -1,9 +1,14 @@
 /// <reference types="cypress" />
+
 /**
- * Strategy of automation calendars using Cypress
+ * Test Suite: Automation Practice - Calendar Handling
+ * File: Test10Celender.cy.js
+ *
+ * Pengujian strategi otomasi untuk pengelolaan kalender (date picker) di Cypress.
  */
 describe('Handling Calenders', () => {
     it('Test', () => {
+        // Test Steps:
         // Set test data for month, date, year
         const monthNumber = '6'; // July (0-based index)
         const date = '15';

@@ -23,6 +23,17 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// ***********************************************
+// Custom Commands JSDoc Documentation
+// ***********************************************
+
+/**
+ * Mengisi detail formulir pengiriman (negara) dan menekan tombol submit.
+ * @param {string} country - Nama negara yang akan dicari dan dipilih
+ * @returns {void}
+ * @example
+ * cy.submitFormDetails('Indonesia')
+ */
 Cypress.Commands.add('submitFormDetails', (country) => {
     cy.get('#country').should('be.visible').type(country);
     cy.get('.suggestions ul li a').should('be.visible').click();

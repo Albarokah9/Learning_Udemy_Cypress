@@ -1,0 +1,142 @@
+{
+    // ============================================
+    // TEST STRUCTURE (MOCHA)
+    // ============================================
+    "Describe Block": {
+        "prefix": "dsb",
+        "body": ["describe('${1:Feature Name}', () => {", "\t$0", "});"],
+        "description": "Mocha describe block",
+    },
+    "It Block": {
+        "prefix": "it",
+        "body": [
+            "it('${1:should do something}', () => {",
+            "\t// Test Steps:",
+            "\t$0",
+            "});",
+        ],
+        "description": "Cypress it test block with project standard comment",
+    },
+    "BeforeEach Hook": {
+        "prefix": "bfe",
+        "body": ["beforeEach(() => {", "\t$0", "});"],
+        "description": "Mocha beforeEach hook",
+    },
+    // ============================================
+    // CYPRESS COMMANDS
+    // ============================================
+    "Visit": {
+        "prefix": "cyv",
+        "body": ["cy.visit('${1:/}');$0"],
+        "description": "cy.visit()",
+    },
+    "Get": {
+        "prefix": "cyget",
+        "body": ["cy.get('${1:selector}')$0"],
+        "description": "cy.get()",
+    },
+    "Click": {
+        "prefix": "cyc",
+        "body": ["click();$0"],
+        "description": ".click()",
+    },
+    "Type": {
+        "prefix": "cyt",
+        "body": ["type('${1:text}');$0"],
+        "description": ".type()",
+    },
+    "Should Be Visible": {
+        "prefix": "cyvis",
+        "body": ["should('be.visible');$0"],
+        "description": ".should('be.visible')",
+    },
+    "Assertions": {
+        "prefix": "cys",
+        "body": ["should('${1:be.visible}');$0"],
+        "description": "Chainable .should()",
+    },
+    // ============================================
+    // PAGE OBJECT MODEL (PROJECT STANDARD)
+    // ============================================
+    "Page Object Class": {
+        "prefix": "cy-page-class",
+        "body": [
+            "/**",
+            " * @class ${1:PageName}",
+            " * @extends BasePage",
+            " */",
+            "class ${1:PageName} extends BasePage {",
+            "\t// ============================================",
+            "\t// SELECTORS",
+            "\t// ============================================",
+            "\tget ${2:element}() {",
+            "\t\treturn cy.get('${3:selector}');",
+            "\t}",
+            "",
+            "\t// ============================================",
+            "\t// ACTIONS",
+            "\t// ============================================",
+            "\t/**",
+            "\t * [Deskripsi dalam Bahasa Indonesia]",
+            "\t * @returns {${1:PageName}}",
+            "\t */",
+            "\tvisit() {",
+            "\t\tcy.visit('${4:/}');",
+            "\t\treturn this;",
+            "\t}",
+            "",
+            "\t/**",
+            "\t * [Deskripsi action]",
+            "\t * @returns {${1:PageName}}",
+            "\t */",
+            "\t${5:actionName}() {",
+            "\t\tthis.${2:element}.click();",
+            "\t\treturn this;",
+            "\t}",
+            "}",
+            "",
+            "export default new ${1:PageName}();",
+        ],
+        "description": "Standard Page Object class with JSDoc",
+    },
+    // ============================================
+    // CUCUMBER BDD
+    // ============================================
+    "Given Step": {
+        "prefix": "giv",
+        "body": ["Given('${1:description}', () => {", "\t$0", "});"],
+        "description": "Cucumber Given step",
+    },
+    "When Step": {
+        "prefix": "whe",
+        "body": ["When('${1:description}', () => {", "\t$0", "});"],
+        "description": "Cucumber When step",
+    },
+    "Then Step": {
+        "prefix": "the",
+        "body": ["Then('${1:description}', () => {", "\t$0", "});"],
+        "description": "Cucumber Then step",
+    },
+    // ============================================
+    // JSDOC & PROJECT RULES
+    // ============================================
+    "Test Suite JSDoc": {
+        "prefix": "jsdoc-suite",
+        "body": [
+            "/**",
+            " * Test Suite: ${1:Suite Name}",
+            " * File: ${TM_FILENAME}",
+            " * ",
+            " * ${2:Deskripsi singkat apa yang sedang diuji}",
+            " */",
+        ],
+        "description": "Standard JSDoc header for test files",
+    },
+    "Standard Import": {
+        "prefix": "cy-import",
+        "body": [
+            "import ${1:PageName} from \"../../pages/${2:folder}/${1:PageName}\";",
+        ],
+        "description": "Import Page Object",
+    },
+}

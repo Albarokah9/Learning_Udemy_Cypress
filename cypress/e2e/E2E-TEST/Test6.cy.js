@@ -1,7 +1,14 @@
 /// <reference types="cypress" />
-//
+
+/**
+ * Test Suite: Automation Practice - Table Validation
+ * File: Test6.cy.js
+ *
+ * Pengujian untuk memvalidasi data pada tabel (mencari teks 'Python' dan memverifikasi harganya).
+ */
 describe('Table Validation Test', () => {
     it('Test case for validating table data', () => {
+        // Test Steps:
         // Visit the practice page
         cy.visit('https://rahulshettyacademy.com/AutomationPractice');
         // Iterate each cell in 2nd column of table

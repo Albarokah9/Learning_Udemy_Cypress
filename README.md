@@ -5,29 +5,32 @@ Dokumentasi materi yang sudah dipelajari dari course Udemy: **Learning Cypress M
 ## 🚀 Setup & Installation
 
 ### Prerequisites
+
 - Node.js (versi 14 atau lebih baru)
 - Git
 
 ### Langkah-langkah Setup
 
 1. **Clone repository ini**
-   ```bash
-   git clone <URL_GITHUB_ANDA>
-   cd Udemy_Cypress
-   ```
+
+    ```bash
+    git clone <URL_GITHUB_ANDA>
+    cd Udemy_Cypress
+    ```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+
+    ```bash
+    npm install
+    ```
 
 3. **Setup environment variables** (opsional)
-   - Buat file `.env` di root project jika diperlukan (contoh untuk `CYPRESS_RECORD_KEY`)
+    - Buat file `.env` di root project jika diperlukan (contoh untuk `CYPRESS_RECORD_KEY`)
 
 4. **Verifikasi instalasi**
-   ```bash
-   npx cypress verify
-   ```
+    ```bash
+    npx cypress verify
+    ```
 
 ## 📝 Cara Menjalankan Test
 
@@ -110,11 +113,11 @@ npx cypress run --spec "cypress/e2e/BDD Features/**/*.feature" --env TAGS="@Regr
 Agar laporan HTML Cucumber yang cantik bisa digenerate, ada **satu langkah manual** yang wajib dilakukan:
 
 1. **Download Formatter**:
-   - Buka: [Cucumber JSON Formatter Releases](https://github.com/cucumber/json-formatter/releases/tag/v19.0.0)
-   - Download file untuk Windows: `cucumber-json-formatter-windows-amd64`
+    - Buka: [Cucumber JSON Formatter Releases](https://github.com/cucumber/json-formatter/releases/tag/v19.0.0)
+    - Download file untuk Windows: `cucumber-json-formatter-windows-amd64`
 2. **Setup File**:
-   - Rename file yang didownload menjadi `cucumber-json-formatter.exe`
-   - Pindahkan file `.exe` tersebut ke **root folder project** ini (`Udemy_Cypress/`).
+    - Rename file yang didownload menjadi `cucumber-json-formatter.exe`
+    - Pindahkan file `.exe` tersebut ke **root folder project** ini (`Udemy_Cypress/`).
 
 **Cara Generate Report:**
 
@@ -133,13 +136,17 @@ npm run generate-html-report
 Berikut adalah langkah-langkah teknis yang dilakukan untuk menghasilkan setup report di atas (sebagai referensi jika ingin setup di project baru):
 
 ### 1. Install Library
+
 Install library `multiple-cucumber-html-reporter` untuk mengubah output JSON menjadi HTML.
+
 ```bash
 npm install multiple-cucumber-html-reporter --save-dev
 ```
 
 ### 2. Config JSON Output
+
 Aktifkan output JSON pada plugin cucumber di `package.json`:
+
 ```json
 "cypress-cucumber-preprocessor": {
     "json": {
@@ -150,13 +157,17 @@ Aktifkan output JSON pada plugin cucumber di `package.json`:
 ```
 
 ### 3. Setup JSON Formatter (Wajib)
+
 Cucumber versi baru membutuhkan `cucumber-json-formatter` untuk format output yang benar.
+
 1. Download file executable dari [GitHub Releases](https://github.com/cucumber/json-formatter/releases).
 2. Rename menjadi `cucumber-json-formatter.exe`.
 3. Simpan di root folder project (sejajar dengan `package.json`).
 
 ### 4. Buat Script Generator
+
 Buat file `generate-report.js` di root folder:
+
 ```javascript
 const report = require('multiple-cucumber-html-reporter');
 
@@ -167,13 +178,15 @@ report.generate({
     metadata: {
         browser: { name: 'chrome', version: 'latest' },
         device: 'Local Test Machine',
-        platform: { name: 'windows', version: '11' }
-    }
+        platform: { name: 'windows', version: '11' },
+    },
 });
 ```
 
 ### 5. Tambahkan NPM Script
+
 Tambahkan perintah ini di `package.json` -> `scripts`:
+
 ```json
 "generate-html-report": "node generate-report.js"
 ```
@@ -192,29 +205,29 @@ Project ini terintegrasi dengan Cypress Cloud untuk monitoring hasil test, video
 Jika Anda ingin menghubungkan project ini ke Dashboard Cypress Anda sendiri (atau baru belajar setup):
 
 1. **Buat Project di Cypress Cloud**:
-   - Login ke [Cypress Cloud](https://cloud.cypress.io/).
-   - Klik **"Create New Project"**.
+    - Login ke [Cypress Cloud](https://cloud.cypress.io/).
+    - Klik **"Create New Project"**.
 
 2. **Dapatkan Project ID**:
-   - Copy `projectId` yang diberikan dashboard.
-   - Paste ke dalam file `cypress.config.js`:
-     ```javascript
-     module.exports = defineConfig({
-       projectId: "ID_PROJECT_ANDA",
-       // ... config lain
-     });
-     ```
+    - Copy `projectId` yang diberikan dashboard.
+    - Paste ke dalam file `cypress.config.js`:
+        ```javascript
+        module.exports = defineConfig({
+            projectId: 'ID_PROJECT_ANDA',
+            // ... config lain
+        });
+        ```
 
 3. **Dapatkan Record Key**:
-   - Copy Key Private yang muncul (misal: `8d204...`).
-   - **PENTING**: Jangan commit key ini ke GitHub!
+    - Copy Key Private yang muncul (misal: `8d204...`).
+    - **PENTING**: Jangan commit key ini ke GitHub!
 
 4. **Setup Environment Variable**:
-   - **Local**: Masukkan ke file `.env`:
-     ```env
-     CYPRESS_RECORD_KEY=your-secret-key-here
-     ```
-   - **CI/CD (GitHub)**: Masukkan ke **Settings > Secrets and variables > Actions > New Repository Secret**.
+    - **Local**: Masukkan ke file `.env`:
+        ```env
+        CYPRESS_RECORD_KEY=your-secret-key-here
+        ```
+    - **CI/CD (GitHub)**: Masukkan ke **Settings > Secrets and variables > Actions > New Repository Secret**.
 
 ### Cara Record Test ke Dashboard
 

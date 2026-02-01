@@ -1,5 +1,12 @@
+/**
+ * Test Suite: Automation Practice - Child Windows
+ * File: Test5.cy.js
+ *
+ * Pengujian untuk menangani pembukaan link di tab baru dengan cara menghapus atribut target.
+ */
 describe('Handling Child Windows', () => {
     it('Should handle child window', () => {
+        // Test Steps:
         // Visit main page
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
         // Remove target attribute to force open link in same tab

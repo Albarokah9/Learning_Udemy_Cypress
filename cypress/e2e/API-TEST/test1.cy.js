@@ -1,9 +1,14 @@
 /// <reference types="cypress" />
 
-// Membuat suite test dengan nama "My First API Test"
+/**
+ * Test Suite: API Mocking - Library API
+ * File: test1.cy.js
+ *
+ * Pengujian untuk melakukan mocking response API menggunakan cy.intercept dan memvalidasi UI.
+ */
 describe('My First API Test', function () {
-    // Membuat 1 test case di dalam suite
     it('My First Test Case', function () {
+        // Test Steps:
         // 1️⃣ Kunjungi halaman web utama aplikasi yang akan diuji
         cy.visit('https://rahulshettyacademy.com/angularAppdemo/');
 

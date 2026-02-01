@@ -1,7 +1,14 @@
 /// <reference types="cypress" />
 
+/**
+ * Test Suite: API Request Manipulation
+ * File: test2.cy.js
+ *
+ * Pengujian untuk memanipulasi request API (mengubah URL target) menggunakan cy.intercept.
+ */
 describe('My First API Test', function () {
     it('My First Test Case', function () {
+        // Test Steps:
         cy.visit('https://rahulshettyacademy.com/angularAppdemo/');
         cy.intercept(
             'GET',

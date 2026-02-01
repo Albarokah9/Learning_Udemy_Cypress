@@ -1,9 +1,5 @@
 {
-    "cucumber.features": [
-        "cypress/e2e/BDD Features/**/*.feature"
-    ],
-    "cucumber.glue": [
-        "cypress/e2e/step_definitions/**/*.js"
-    ],
+    "cucumber.features": ["cypress/e2e/BDD Features/**/*.feature"],
+    "cucumber.glue": ["cypress/e2e/step_definitions/**/*.js"],
     "cucumber.strictMode": false
 }

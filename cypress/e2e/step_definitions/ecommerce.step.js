@@ -1,6 +1,10 @@
-const { Given, When, Then, Before } = require('@badeball/cypress-cucumber-preprocessor');
+const {
+    Given,
+    When,
+    Then,
+    Before,
+} = require('@badeball/cypress-cucumber-preprocessor');
 import HomePage from '../../support/Page_Object_Model/HomePage';
-
 
 /**
  * Step Definitions untuk Ecommerce Feature
@@ -32,19 +36,22 @@ Given('Saya membuka aplikasi e-commerce', () => {
     homePage.goTo();
 });
 
-Given('Saya login dengan username {string} dan password {string}', (username, password) => {
-    productPage = homePage.login(username, password);
-});
+Given(
+    'Saya login dengan username {string} dan password {string}',
+    (username, password) => {
+        productPage = homePage.login(username, password);
+    }
+);
 
 /**
  * Login dengan Data Table
  * Digunakan ketika ingin mengirimkan multiple data atau structurized data di Gherkin
- * 
+ *
  * @example
  * Dan Saya login dengan kredensial berikut:
  *   | username           | password |
  *   | rahulshettyacademy | learning |
- * 
+ *
  * @param {DataTable} dataTable - Object tabel dari Cucumber
  */
 Given('Saya login dengan kredensial berikut:', (dataTable) => {
@@ -84,11 +91,14 @@ When('Saya mengirim pesanan ke negara {string}', (country) => {
 /**
  * MAKA Steps - Verifikasi/Assertions
  */
-Then('Saya melihat halaman katalog produk dengan {int} produk tersedia', (productCount) => {
-    homePage.verifyLoginSuccess();
-    productPage.verifyPageLoaded();
-    productPage.getProductCards().should('have.length', productCount);
-});
+Then(
+    'Saya melihat halaman katalog produk dengan {int} produk tersedia',
+    (productCount) => {
+        homePage.verifyLoginSuccess();
+        productPage.verifyPageLoaded();
+        productPage.getProductCards().should('have.length', productCount);
+    }
+);
 
 Then('Total harga keranjang harus kurang dari {int}', (priceLimit) => {
     cartPage.getCartTotal().then((sum) => {
@@ -120,9 +130,12 @@ Given('I am on Ecommerce Page', () => {
 /**
  * WHEN Steps - Actions/Interaksi user
  */
-When('I login with username {string} and password {string}', (username, password) => {
-    productPage = homePage.login(username, password);
-});
+When(
+    'I login with username {string} and password {string}',
+    (username, password) => {
+        productPage = homePage.login(username, password);
+    }
+);
 
 When('I login to the application', function () {
     // Menggunakan data dari fixture

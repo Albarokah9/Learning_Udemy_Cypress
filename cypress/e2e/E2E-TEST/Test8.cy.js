@@ -1,9 +1,14 @@
 /**
- * Handling Child Windows using Cypress
+ * Test Suite: Automation Practice - Advanced Child Windows
+ * File: Test8.cy.js
+ *
+ * Pengujian tingkat lanjut untuk menangani child windows dengan ekstraksi URL dan cy.origin.
  */
+
 /// <reference types="cypress" />
 describe('Handling Child Windows', () => {
     it('Test', () => {
+        // Test Steps:
         // Visit URL using Cypress environment variable
         cy.visit(Cypress.env('practiceUrl'));
         // Access the 'Open Tab' link and extract its href value

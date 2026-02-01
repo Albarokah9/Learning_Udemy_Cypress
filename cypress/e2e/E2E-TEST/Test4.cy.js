@@ -1,6 +1,14 @@
 /// <reference types="cypress" />
+
+/**
+ * Test Suite: Automation Practice - Alerts & Popups
+ * File: Test4.cy.js
+ *
+ * Pengujian untuk menangani window alert dan confirm popup.
+ */
 describe('My Four Test Suite', () => {
     it('My Four Test Case', () => {
+        // Test Steps:
         // Visit Practice Page
         cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
         // Click Alert button to trigger window alert

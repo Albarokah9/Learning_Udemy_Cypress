@@ -1,6 +1,12 @@
+/**
+ * Test Suite: GreenKart Checkout Flow
+ * File: Test2.cy.js
+ *
+ * Pengujian dasar untuk proses checkout produk di GreenKart.
+ */
 describe('My Second Test Suite', function () {
     it('My Second Test Case', function () {
-        // Test steps will go here
+        // Test Steps:
         // Visit a web page
         cy.visit('https://rahulshettyacademy.com/seleniumPractise/#/');
         // Check the title of the page

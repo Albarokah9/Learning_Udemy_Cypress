@@ -2,6 +2,12 @@
 import ConfirmationPage from '../../support/Page_Object_Model/ConfirmationPage';
 import HomePage from '../../support/Page_Object_Model/HomePage';
 
+/**
+ * Test Suite: End to End Ecommerce Test
+ * File: Test1.cy.js
+ *
+ * Pengujian alur belanja lengkap (e2e) mulai dari login hingga konfirmasi pesanan.
+ */
 describe('End to End Ecommerce Test', function () {
     beforeEach(function () {
         cy.fixture('example').then((data) => {
@@ -11,6 +17,7 @@ describe('End to End Ecommerce Test', function () {
     });
 
     it('Submit Order', function () {
+        // Test Steps:
         const { productName, username, password, country } = this.data;
         const PRICE_LIMIT = 200000;
 

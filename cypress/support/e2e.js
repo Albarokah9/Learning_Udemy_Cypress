@@ -16,3 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 import 'cypress-mochawesome-reporter/register';
+
+// Mencegah Cypress gagal ketika ada error uncaught exception dari kode aplikasi luar (seperti iklan/tracking)
+Cypress.on('uncaught:exception', (err, runnable) => {
+    return false;
+});
+

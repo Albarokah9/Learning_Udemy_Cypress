@@ -14,6 +14,7 @@ module.exports = defineConfig({
         env: {
             practiceUrl: 'https://rahulshettyacademy.com/AutomationPractice/',
             Url: 'https://rahulshettyacademy.com/loginpagePractise/#',
+            allowCypressEnv: false,
         },
         viewportWidth: 1366,
         viewportHeight: 768,

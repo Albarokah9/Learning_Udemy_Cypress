@@ -17,3 +17,7 @@ cucumber-json-formatter.exe
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Local Agent Skills
+.agents/skills/
+skills-lock.json
